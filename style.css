@@ -4,8 +4,8 @@
     /* メインのミントブルー */
     --primary-dark: #456D6D;
     /* 深みのあるミント */
-    --accent-color: #EB6100;
-    /* アクセントのオレンジ（CTA用） */
+    --accent-color: #FF8F22;
+    /* アクセントのオレンジ（より鮮やかで活発なトーンへ変更） */
     --pale-mint: #F2F8F8;
     /* 背景用極薄ミント */
     --pale-blue: #f0f4f8;
@@ -480,11 +480,22 @@ ul {
 }
 
 .flow-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.flow-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 30px;
+}
+
+.flow-steps {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 15px;
-    margin-top: 40px;
 }
 
 .flow-item {
@@ -588,14 +599,100 @@ ul {
     }
 }
 
-/* Business Model */
+/* Why nogga Section (Integrated) */
+.why-nogga {
+    background: var(--white);
+    padding: 100px 0;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.why-card {
+    background: var(--pale-mint);
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(126, 184, 184, 0.2);
+    text-align: center;
+    /* カード内の基本配置を中央に */
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-card .why-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.why-h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.why-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+}
+
+.why-list li {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 12px;
+    padding-left: 1.5em;
+    position: relative;
+    color: var(--text-color);
+}
+
+.why-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.why-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+}
+
+@media (max-width: 900px) {
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .why-card {
+        padding: 30px;
+    }
+}
+
+/* Business Model (Integrated into why-nogga) */
+.model-image-wrapper {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
 .model-flow {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 80px;
-    /* 40pxから80pxに増やし、さらに1行分の余白を確保 */
 }
 
 .flow-step {
@@ -919,7 +1016,6 @@ ul {
     align-items: center;
     justify-content: center;
     z-index: 10;
-    box-shadow: 0 10px 30px rgba(126, 184, 184, 0.2);
 }
 
 .winwin-core-title {
@@ -954,7 +1050,6 @@ ul {
     justify-content: center;
     font-size: 2rem;
     margin: 0 auto 15px;
-    box-shadow: 0 4px 15px rgba(126, 184, 184, 0.3);
 }
 
 .winwin-label {
@@ -1156,21 +1251,22 @@ ul {
 }
 
 .plan-icon-circle {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    background: var(--primary-color);
+    background: var(--white);
+    border: 3px solid var(--primary-color);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.4rem;
+    line-height: 1;
     margin: 20px auto 15px;
-    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
 }
 
 .plan-icon-circle--sub {
-    background: #AAB2BD;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: var(--white);
+    border: 3px solid #AAB2BD;
 }
 
 .plan-features {
@@ -1304,7 +1400,6 @@ ul {
     font-weight: bold;
     font-size: 1.05rem;
     letter-spacing: 0.03em;
-    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
     position: relative;
     overflow: hidden;
 }
@@ -1331,12 +1426,14 @@ ul {
 }
 
 .plan-highlight {
-    background-color: #FFF3CD;
-    padding: 10px;
+    background-color: rgba(255, 143, 34, 0.08);
+    padding: 12px;
     text-align: center;
     margin: 15px 0;
-    border-radius: 5px;
+    border-radius: 8px;
     font-weight: bold;
+    border: 1px solid var(--accent-color);
+    color: var(--primary-dark);
 }
 
 .plan-intro {
@@ -1884,9 +1981,8 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--white);
-    box-shadow: 0 4px 10px rgba(126, 184, 184, 0.3);
 }
 
 .highlight-text {
@@ -1953,9 +2049,11 @@ ul {
 }
 
 .roi-profit-label {
+    display: inline-block;
     font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 8px;
+    color: #666;
+    margin-right: 5px;
+    font-weight: normal;
     letter-spacing: 0.08em;
 }
 
@@ -2173,7 +2271,6 @@ ul {
     justify-content: center;
     margin: 0 auto 20px;
     font-size: 2.5rem;
-    box-shadow: 0 4px 15px rgba(126, 184, 184, 0.2);
 }
 
 .roadmap-period {
@@ -2269,5 +2366,77 @@ ul {
 
     .roadmap-step::after {
         margin: 15px 0 0;
+    }
+}
+
+/* Support & Infrastructure Section */
+.support-infra {
+    padding: 100px 0;
+}
+
+.infra-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.infra-card {
+    background: var(--pale-mint);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    border: 1px solid rgba(126, 184, 184, 0.2);
+    transition: transform 0.3s ease;
+    flex: 0 1 calc(33.333% - 20px);
+    min-width: 300px;
+}
+
+.infra-card:hover {
+    transform: translateY(-5px);
+}
+
+.infra-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 20px;
+    line-height: 1;
+}
+
+.infra-card h3 {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+}
+
+.infra-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+    .infra-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .infra-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .support-infra {
+        padding: 60px 0;
     }
 }
