@@ -66,6 +66,19 @@ ul {
     padding: 100px 0;
 }
 
+/* --- 背景バリエーション --- */
+.bg-light {
+    background-color: #f5f5f5;
+}
+
+.bg-pale-blue {
+    background-color: var(--pale-blue);
+}
+
+.bg-pale-mint {
+    background-color: var(--pale-mint);
+}
+
 .section-title {
     text-align: center;
     font-size: 2.2rem;
@@ -288,6 +301,171 @@ ul {
 .intro-bridge {
     text-align: center;
     font-size: 1.2rem;
+}
+
+/* ===========================
+   Price Comparison Section
+=========================== */
+.price-comparison {
+    background: linear-gradient(135deg, var(--pale-mint) 0%, #dff0f0 100%);
+    padding: 80px 0;
+}
+
+.section-title--white {
+    color: var(--primary-dark) !important;
+}
+
+.section-title--white::after {
+    background: var(--primary-color) !important;
+}
+
+.comparison-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 48px;
+}
+
+/* --- 共通カード --- */
+.comp-card {
+    background: var(--white);
+    border: 1px solid #d4e8e8;
+    border-radius: 16px;
+    padding: 32px 28px;
+    flex: 1;
+    min-width: 240px;
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+    color: var(--text-color);
+    box-shadow: 0 2px 12px rgba(126, 184, 184, 0.1);
+}
+
+.comp-card--best {
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 6px 24px rgba(126, 184, 184, 0.3);
+}
+
+/* --- バッジ --- */
+.comp-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary-color);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 4px 16px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* --- アイコン円 --- */
+.comp-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin: 0 auto 16px;
+}
+
+.comp-icon--red {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.comp-icon--orange {
+    background: rgba(249, 115, 22, 0.1);
+}
+
+.comp-icon--green {
+    background: rgba(126, 184, 184, 0.2);
+}
+
+/* --- 販売方法ラベル --- */
+.comp-method {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 12px;
+}
+
+/* --- 価格 --- */
+.comp-price {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+.comp-price--bad {
+    color: #f87171;
+}
+
+.comp-price--mid {
+    color: #fb923c;
+}
+
+.comp-price--best {
+    color: var(--primary-dark);
+    font-size: 2.6rem;
+}
+
+.comp-range {
+    font-size: 0.78rem;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+/* --- 特徴リスト --- */
+.comp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    border-top: 1px solid #e8f0f0;
+    padding-top: 16px;
+}
+
+.comp-list__item {
+    font-size: 0.88rem;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-color);
+}
+
+.comp-list__item--ng::before {
+    content: '✗';
+    color: #f87171;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.comp-list__item--ok::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .comparison-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .comp-card {
+        width: 100%;
+        max-width: 360px;
+    }
 }
 
 /* Business Model */
@@ -577,6 +755,7 @@ ul {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
 }
 
 .merit-icon {
@@ -589,10 +768,10 @@ ul {
 .plans-grid {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 30px;
     flex-wrap: wrap;
     margin-top: 50px;
-    /* Added space for scaling and labels */
 }
 
 .plan-card {
@@ -610,46 +789,183 @@ ul {
 .plan-card.recommended {
     border-top: 5px solid var(--primary-color);
     transform: scale(1.05);
+    transform-origin: top center;
     z-index: 2;
 }
 
-.plan-label {
+.plan-icon-circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 20px auto 15px;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.plan-icon-circle--sub {
+    background: #AAB2BD;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.plan-features {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.plan-features li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.plan-features li:last-child {
+    border-bottom: none;
+}
+
+.plan-features li::first-letter {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.plan-recommend-badge {
     position: absolute;
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--primary-color);
+    width: fit-content;
+    background: var(--accent-color);
     color: var(--white);
-    padding: 5px 15px;
+    padding: 5px 16px;
     border-radius: 20px;
     font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.plan-label {
+    display: block;
+    text-align: center;
+    margin: 0 auto 12px;
+    width: fit-content;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 6px 24px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
     white-space: nowrap;
 }
 
 .plan-label-sub {
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    text-align: center;
+    margin: 0 auto 12px;
+    width: fit-content;
     background: #AAB2BD;
-    /* Neutral Grey */
     color: var(--white);
-    padding: 5px 15px;
+    padding: 6px 24px;
     border-radius: 20px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    font-weight: bold;
     white-space: nowrap;
 }
 
+/* --- 加入料ブロック --- */
+.plan-price {
+    margin: 20px 0 0;
+    padding: 16px 18px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.price-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: #888;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
 .price-val {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: var(--primary-dark);
+    line-height: 1.5;
 }
 
 .price-old {
     text-decoration: line-through;
+    color: #bbb;
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.price-arrow {
+    color: var(--accent-color);
+    font-weight: bold;
+    margin: 0 4px;
+}
+
+.price-new {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    margin-top: 2px;
+}
+
+.price-note {
+    font-size: 0.75rem;
     color: #999;
-    font-size: 1rem;
+    margin-top: 4px;
+}
+
+/* --- 収益目安ブロック（最も目立たせる） --- */
+.plan-income {
+    margin-top: 16px;
+    padding: 18px 14px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: #fff;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.05rem;
+    letter-spacing: 0.03em;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.plan-income::before {
+    content: '💰 収益目安';
+    display: block;
+    font-size: 0.75rem;
+    font-weight: normal;
+    opacity: 0.85;
+    margin-bottom: 6px;
+    letter-spacing: 0.1em;
+}
+
+.plan-income::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
 }
 
 .plan-highlight {
@@ -1095,4 +1411,205 @@ ul {
     }
 
     /* Utility to show BRs only on PC if needed, currently sp-only hides things on SP */
+}
+
+/* ===========================
+   ROI Section（一台あたりの利益と回収）
+=========================== */
+.roi-section {
+    background: linear-gradient(160deg, var(--pale-mint) 0%, #c8e8e8 100%);
+    color: var(--text-color);
+}
+
+.roi-section .section-title {
+    color: var(--primary-dark);
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.roi-section .section-title::after {
+    background: var(--primary-color);
+}
+
+/* --- 利益ボックス --- */
+.roi-profit-box {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.roi-profit-label {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 0.08em;
+}
+
+.roi-profit-amount {
+    font-size: 3.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.roi-profit-sub {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+/* --- 加入料ボックス --- */
+.roi-fee-box {
+    background: #fff;
+    border: 1px solid #c8e0e0;
+    border-radius: 12px;
+    padding: 28px 20px;
+    text-align: center;
+    max-width: 520px;
+    margin: 0 auto 40px;
+}
+
+.roi-fee-label {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+}
+
+.roi-fee-amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.roi-fee-note {
+    font-size: 0.95rem;
+    color: var(--text-color);
+}
+
+.roi-underline {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* --- 回収パターンカード --- */
+.roi-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.roi-card {
+    background: #fff;
+    border: 1px solid #c8e0e0;
+    box-shadow: 0 2px 10px rgba(126, 184, 184, 0.12);
+    border-radius: 12px;
+    padding: 24px 20px;
+    text-align: center;
+    flex: 1;
+    min-width: 180px;
+    max-width: 220px;
+}
+
+.roi-card__num {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.roi-card__type {
+    font-size: 0.78rem;
+    color: #999;
+    margin-bottom: 12px;
+}
+
+.roi-card__calc {
+    font-size: 0.88rem;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.roi-card__total {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+}
+
+.roi-card__badge {
+    display: inline-block;
+    background: rgba(126, 184, 184, 0.25);
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+/* --- 3つのポイント行 --- */
+.roi-points {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.roi-point {
+    background: #fff;
+    border: 1px solid rgba(126, 184, 184, 0.4);
+    box-shadow: 0 2px 8px rgba(126, 184, 184, 0.12);
+    border-radius: 10px;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 180px;
+    max-width: 260px;
+}
+
+.roi-point__icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.roi-point__text {
+    font-size: 0.92rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .roi-profit-amount {
+        font-size: 2.8rem;
+    }
+
+    .roi-fee-amount {
+        font-size: 2.3rem;
+    }
+
+    .roi-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .roi-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .roi-points {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .roi-point {
+        width: 100%;
+        max-width: 320px;
+    }
 }
