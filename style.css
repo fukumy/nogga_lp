@@ -657,8 +657,13 @@ ul {
     margin: 0 auto 20px;
     line-height: 1.4;
     text-align: center;
-    max-width: 14em;
-    /* 適切な幅で折り返されるよう調整 */
+}
+
+@media (min-width: 769px) {
+    .why-h3 {
+        max-width: 14em;
+        /* PCでのみ幅を制限 */
+    }
 }
 
 .why-list {
@@ -853,9 +858,15 @@ ul {
 
 /* Zero Number Styling */
 .comparison-table-wrapper {
-    margin-top: 40px;
+    margin-top: 30px;
     overflow-x: auto;
-    /* For mobile responsiveness */
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 20px;
+}
+
+.comparison-table {
+    min-width: 600px;
+    /* スマホで内容が潰れないよう最小幅を確保 */
 }
 
 .comparison-table {
@@ -1217,25 +1228,25 @@ ul {
         bottom: 0 !important;
         transform: none !important;
         width: 100%;
-        max-width: 320px;
+        max-width: 340px;
         display: flex;
         align-items: center;
         text-align: left;
         gap: 20px;
         padding: 20px;
         background: #fff;
-    }
-
-    .winwin-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-        margin: 0;
-        flex-shrink: 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(126, 184, 184, 0.1);
     }
 
     .winwin-label {
-        margin-bottom: 2px;
+        font-size: 1.1rem;
+        margin-bottom: 4px;
+    }
+
+    .winwin-desc {
+        font-size: 0.9rem;
     }
 
     .winwin-arrow {
@@ -1243,7 +1254,9 @@ ul {
         top: 0 !important;
         left: 0 !important;
         transform: rotate(90deg) !important;
-        margin: 10px 0;
+        margin: 15px 0;
+        font-size: 1.8rem;
+        opacity: 0.3;
     }
 }
 
@@ -1820,7 +1833,13 @@ ul {
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+
+    .section-lead {
+        font-size: 0.95rem;
         margin-bottom: 30px;
     }
 
@@ -1854,7 +1873,9 @@ ul {
 
     .flow-arrow {
         transform: rotate(90deg);
-        margin: 10px 0;
+        margin: 20px 0;
+        font-size: 1.5rem;
+        opacity: 0.5;
     }
 
     /* Profile */
@@ -2029,11 +2050,12 @@ ul {
     }
 
     .forecast-main-amount {
-        font-size: 3.8rem;
+        font-size: 3.2rem;
+        padding: 0 10px;
     }
 
     .forecast-main-amount .currency {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .forecast-cards {
