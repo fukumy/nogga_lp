@@ -40,6 +40,21 @@ ul {
     list-style: none;
 }
 
+/* Responsive Utilities */
+.sp-only {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .sp-only {
+        display: inline;
+    }
+
+    .pc-only {
+        display: none;
+    }
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -131,7 +146,8 @@ ul {
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 1000px;
+    /* PC表示での横幅を800pxから1000pxに拡大 */
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     /* Shadow for text readability */
     padding: 0 5%;
@@ -168,8 +184,8 @@ ul {
     }
 
     .hero-title {
-        font-size: 1.35rem;
-        /* パディング削減と合わせ、1.4remから1.35remへ微調整して確実に1行に収める */
+        font-size: 1.6rem;
+        /* テキストが短くなったため、少し大きくしてインパクトを強調 */
         margin-bottom: 35px;
         /* 余白を35pxに増加 */
     }
@@ -280,15 +296,18 @@ ul {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
+    margin-bottom: 80px;
+    /* 40pxから80pxに増やし、さらに1行分の余白を確保 */
 }
 
 .flow-step {
     text-align: center;
-    padding: 20px;
+    padding: 30px;
+    /* 20pxから30pxに拡大 */
     background: var(--white);
     border-radius: 10px;
-    width: 150px;
+    width: 225px;
+    /* 150pxから225pxに拡大 (1.5倍) */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     border: 1px solid #e0e0e0;
     /* 視認性向上のため枠線を追加 */
@@ -296,24 +315,43 @@ ul {
 
 .step-you {
     border: 2px solid var(--primary-color);
-    background-color: #F0F4FF;
+    background-color: var(--pale-mint);
+    /* #F0F4FFから全体のトーンに合わせたペールミントに変更 */
+}
+
+.step-note {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    /* アクセントカラーに変更して活気を出す */
+    margin-top: 5px;
 }
 
 .step-icon {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3.75rem;
+    /* 2.5remから3.75remに拡大 (1.5倍) */
+    margin-bottom: 15px;
 }
 
 .flow-arrow {
-    font-size: 2rem;
+    font-size: 3rem;
+    /* 2remから3remに拡大 (1.5倍) */
     margin: 0 20px;
     color: var(--primary-color);
 }
 
 .model-note {
     text-align: center;
+    font-size: 1.2rem;
+    /* 3pt分（約4px）大きく調整 */
     margin-bottom: 50px;
     font-weight: bold;
+    color: var(--primary-dark);
+}
+
+.model-note span {
+    color: var(--accent-color);
+    /* 「ハッピー」の部分をオレンジに */
 }
 
 .section-lead {
@@ -326,8 +364,12 @@ ul {
 
 .model-zeros-title {
     text-align: center;
-    font-size: 1.5rem;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    /* 1.5remから2remに拡大し、存在感を強化 */
+    margin-top: 80px;
+    /* フロー図との間に空白を追加 */
+    margin-bottom: 40px;
+    /* 30pxから40pxに微調整 */
     color: var(--primary-dark);
 }
 
@@ -362,7 +404,8 @@ ul {
 
 .model-image-wrapper,
 .comparison-image-wrapper {
-    margin-bottom: 40px;
+    margin-bottom: 120px;
+    /* 80pxから120pxに増やし、さらに1行分の余白を確保 */
     text-align: center;
 }
 
@@ -404,13 +447,13 @@ ul {
 }
 
 .comparison-table th {
-    background-color: #0F2540;
-    /* Dark Navy */
+    background-color: var(--primary-dark);
+    /* ネイビーからブランドカラーのミント（濃）に変更 */
     color: var(--white);
     font-weight: bold;
     text-align: center;
     /* ヘッダーを中央寄せ */
-    padding: 40px 20px;
+    padding: 30px 15px;
 }
 
 .comparison-table td {
@@ -420,13 +463,15 @@ ul {
 }
 
 .comparison-table th:nth-child(2) {
-    background-color: #DDE4F0;
+    background-color: #f5f5f5;
+    /* グレー系に抑えて対比を強調 */
     color: var(--text-color);
 }
 
 .comparison-table th.highlight {
-    background-color: #C5A358;
-    /* Gold-ish Brown from image */
+    background-color: var(--primary-color);
+    /* ゴールドからブランドカラーのミントに変更 */
+    color: var(--white);
 }
 
 .comparison-table td.item-name {
@@ -443,13 +488,14 @@ ul {
 }
 
 .comparison-table td.nogga {
-    background-color: #fdfaf3;
-    /* Subtle highlight */
+    background-color: var(--pale-mint);
+    /* サイト共通のペールミントに変更 */
     width: 37.5%;
 }
 
 .comparison-table td.nogga .mark {
-    color: #C5A358;
+    color: var(--accent-color);
+    /* ゴールドからブランドアクセントのオレンジに変更 */
     font-weight: bold;
 }
 
