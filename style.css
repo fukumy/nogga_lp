@@ -118,8 +118,14 @@ ul {
 }
 
 .hero-bg-overlay {
-    display: none;
-    /* デバッグ・調整のため一旦非表示 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.2) 100%);
+    /* 文字の可読性を確保するために復活、かつ白とびを抑える */
+    z-index: 1;
 }
 
 .hero-content {
@@ -143,18 +149,18 @@ ul {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 35px;
-        /* スマホ時はさらに広めの余白を（35px） */
+        padding: 0 25px;
+        /* 折り返しを防ぐため25pxに微調整 */
     }
 
     .hero-content {
-        padding: 0 8%;
-        /* ヒーロー内でもゆとりを */
+        padding: 0 5%;
+        /* 左右のゆとりを維持しつつ幅を確保 */
     }
 
     .hero-title {
-        font-size: 2.2rem;
-        /* スマホではサイズを落として端まで広がるのを抑える */
+        font-size: 1.8rem;
+        /* 2.2remだと折り返すため1.8remに縮小 */
         margin-bottom: 20px;
     }
 
