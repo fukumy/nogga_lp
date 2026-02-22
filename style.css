@@ -168,15 +168,22 @@ ul {
     }
 
     .hero-title {
-        font-size: 1.7rem;
-        /* 1.8remよりさらに少し小さくして1行の確実性を高める */
+        font-size: 1.5rem;
+        /* キャッチコピーを1行に収めるため縮小 */
         margin-bottom: 20px;
     }
 
     .hero-sub {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
+        /* サブタイトルを1行に収めるため縮小 */
         margin-bottom: 15px;
-        /* 余白を詰める */
+    }
+
+    .btn {
+        font-size: 1.1rem;
+        /* ボタンテキストを1行に収めるための調整 */
+        padding: 15px 20px;
+        /* 左右パディングを少し削って確実に収める */
     }
 
     .hero-lead {
@@ -229,6 +236,8 @@ ul {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    /* 視認性向上のため枠線を追加 */
     margin-bottom: 40px;
 }
 
@@ -278,6 +287,8 @@ ul {
     border-radius: 10px;
     width: 150px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
+    /* 視認性向上のため枠線を追加 */
 }
 
 .step-you {
