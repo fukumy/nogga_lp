@@ -43,7 +43,8 @@ ul {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
+    /* 左右の余白を拡大（20px -> 30px） */
 }
 
 .section {
@@ -127,6 +128,8 @@ ul {
     max-width: 800px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     /* Shadow for text readability */
+    padding: 0 5%;
+    /* PCでも少し余白を確保 */
 }
 
 .hero-title {
@@ -136,6 +139,48 @@ ul {
     font-weight: 700;
     font-family: var(--font-serif);
     color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 35px;
+        /* スマホ時はさらに広めの余白を（35px） */
+    }
+
+    .hero-content {
+        padding: 0 8%;
+        /* ヒーロー内でもゆとりを */
+    }
+
+    .hero-title {
+        font-size: 2.2rem;
+        /* スマホではサイズを落として端まで広がるのを抑える */
+        margin-bottom: 20px;
+    }
+
+    .hero-sub {
+        font-size: 1.1rem;
+    }
+
+    .hero-lead {
+        font-size: 1.1rem;
+        word-break: break-all;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+        /* 見出しも少し小さくして余白を稼ぐ */
+        padding: 0 10px;
+    }
+
+    .story-headline {
+        font-size: 1.5rem;
+    }
+
+    .story-text {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
 }
 
 .hero-sub {
