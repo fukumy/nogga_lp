@@ -153,23 +153,37 @@ ul {
         /* 折り返しを防ぐため25pxに微調整 */
     }
 
+    .hero {
+        height: auto;
+        /* コンテンツに合わせて高さを自動調整 */
+        min-height: 500px;
+        /* 最小限の高さは確保 */
+        padding: 60px 0 40px;
+        /* 上下に余白を持たせる */
+    }
+
     .hero-content {
         padding: 0 5%;
         /* 左右のゆとりを維持しつつ幅を確保 */
     }
 
     .hero-title {
-        font-size: 1.8rem;
-        /* 2.2remだと折り返すため1.8remに縮小 */
+        font-size: 1.7rem;
+        /* 1.8remよりさらに少し小さくして1行の確実性を高める */
         margin-bottom: 20px;
     }
 
     .hero-sub {
         font-size: 1.1rem;
+        margin-bottom: 15px;
+        /* 余白を詰める */
     }
 
     .hero-lead {
         font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 30px;
+        /* 50pxから30pxに抑制 */
         word-break: break-all;
     }
 
