@@ -149,8 +149,8 @@ ul {
 
 @media (max-width: 768px) {
     .container {
-        padding: 0 25px;
-        /* 折り返しを防ぐため25pxに微調整 */
+        padding: 0 15px;
+        /* 左右パディングを25pxから15pxに削減して幅を確保 */
     }
 
     .hero {
@@ -163,13 +163,13 @@ ul {
     }
 
     .hero-content {
-        padding: 0 5%;
-        /* 左右のゆとりを維持しつつ幅を確保 */
+        padding: 0 0;
+        /* 左右パディングを5%から0に変更し、表示幅を最大化 */
     }
 
     .hero-title {
-        font-size: 1.4rem;
-        /* さらに縮小して、確実に1行に収まるように調整 */
+        font-size: 1.35rem;
+        /* パディング削減と合わせ、1.4remから1.35remへ微調整して確実に1行に収める */
         margin-bottom: 20px;
     }
 
