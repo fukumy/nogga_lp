@@ -168,8 +168,8 @@ ul {
     }
 
     .hero-title {
-        font-size: 1.5rem;
-        /* キャッチコピーを1行に収めるため縮小 */
+        font-size: 1.4rem;
+        /* さらに縮小して、確実に1行に収まるように調整 */
         margin-bottom: 20px;
     }
 
