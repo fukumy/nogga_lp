@@ -23,6 +23,14 @@
     padding: 0;
 }
 
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: var(--font-main);
     color: var(--text-color);
@@ -1228,25 +1236,41 @@ ul {
         bottom: 0 !important;
         transform: none !important;
         width: 100%;
-        max-width: 340px;
+        max-width: 320px;
         display: flex;
+        flex-direction: column;
+        /* 縦並びにして幅を確保 */
         align-items: center;
-        text-align: left;
-        gap: 20px;
-        padding: 20px;
+        text-align: center;
+        /* 中央寄せ */
+        gap: 15px;
+        padding: 24px 20px;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         border: 1px solid rgba(126, 184, 184, 0.1);
     }
 
+    .winwin-icon {
+        width: 50px;
+        /* アイコンを小さく */
+        height: 50px;
+        font-size: 1.3rem;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
     .winwin-label {
         font-size: 1.1rem;
-        margin-bottom: 4px;
+        font-weight: bold;
+        margin-bottom: 6px;
+        white-space: normal;
+        /* 折り返しを許可 */
     }
 
     .winwin-desc {
         font-size: 0.9rem;
+        line-height: 1.5;
     }
 
     .winwin-arrow {
@@ -1254,9 +1278,9 @@ ul {
         top: 0 !important;
         left: 0 !important;
         transform: rotate(90deg) !important;
-        margin: 15px 0;
-        font-size: 1.8rem;
-        opacity: 0.3;
+        margin: 10px 0;
+        font-size: 1.5rem;
+        opacity: 0.2;
     }
 }
 
@@ -1850,11 +1874,14 @@ ul {
     }
 
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 1.6rem;
+        /* 2.2remから縮小し見切れを防止 */
+        line-height: 1.4;
+        word-break: break-all;
     }
 
     .hero-lead {
-        font-size: 1.1rem;
+        font-size: 1.0rem;
     }
 
     .btn {
@@ -1866,16 +1893,40 @@ ul {
         font-size: 0.85rem;
     }
 
-    /* Model Flow */
-    .model-flow {
+    /* Bridge Text */
+    .intro-bridge p {
+        font-size: 1.1rem;
+        /* 見栄えを考慮し若干縮小 */
+        line-height: 1.6;
+    }
+
+    .intro-bridge-sub {
+        font-size: 0.9rem;
+    }
+
+    /* Service Flow (Auction Mechanism) */
+    .flow-steps {
         flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .flow-item {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
     }
 
     .flow-arrow {
         transform: rotate(90deg);
-        margin: 20px 0;
+        margin: 5px 0;
         font-size: 1.5rem;
-        opacity: 0.5;
+        opacity: 0.3;
+        display: block !important;
+        /* 強制表示して下向きにする */
     }
 
     /* Profile */
@@ -1885,7 +1936,16 @@ ul {
     }
 
     .profile-img {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
+        width: 100%;
+        max-width: 280px;
+        /* PC同様に適切に表示 */
+        margin: 0 auto 20px;
+    }
+
+    .profile-img img {
+        width: 100%;
+        height: auto;
     }
 
     /* Plans */
@@ -2391,25 +2451,34 @@ ul {
 
     .roadmap-item {
         display: flex;
-        align-items: flex-start;
-        text-align: left;
+        flex-direction: column;
+        /* 縦並びにして幅を確保 */
+        align-items: center;
+        text-align: center;
         width: 100%;
-        gap: 20px;
+        gap: 15px;
     }
 
     .roadmap-icon {
-        margin: 0;
+        width: 60px;
+        /* アイコンを小さく */
+        height: 60px;
+        margin: 0 auto;
+        font-size: 1.8rem;
         flex-shrink: 0;
     }
 
     .roadmap-period {
-        margin-top: 35px;
-        white-space: nowrap;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        white-space: normal;
+        font-size: 1.1rem;
     }
 
     .roadmap-phase {
-        flex-grow: 1;
-        margin-top: 10px;
+        width: 100%;
+        margin-top: 0;
+        padding: 20px;
     }
 
     .roadmap-step::after {
