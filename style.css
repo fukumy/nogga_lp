@@ -170,13 +170,15 @@ ul {
     .hero-title {
         font-size: 1.35rem;
         /* パディング削減と合わせ、1.4remから1.35remへ微調整して確実に1行に収める */
-        margin-bottom: 20px;
+        margin-bottom: 35px;
+        /* 余白を35pxに増加 */
     }
 
     .hero-sub {
         font-size: 0.95rem;
         /* サブタイトルを1行に収めるため縮小 */
-        margin-bottom: 15px;
+        margin-bottom: 30px;
+        /* 余白を30pxに増加 */
     }
 
     .btn {
@@ -188,7 +190,8 @@ ul {
 
     .hero-lead {
         font-size: 1.1rem;
-        line-height: 1.7;
+        line-height: 1.5;
+        /* 行間を1.7から1.5に縮小 */
         margin-bottom: 30px;
         /* 50pxから30pxに抑制 */
         word-break: break-all;
