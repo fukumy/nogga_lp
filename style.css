@@ -217,30 +217,6 @@ ul {
         /* 左右パディングを5%から0に変更し、表示幅を最大化 */
     }
 
-    .hero-title {
-        font-size: 1.5rem !important;
-        /* 確実に収まるサイズ */
-        margin-bottom: 25px !important;
-        white-space: normal !important;
-        /* 強制的に折り返しを許可 */
-        line-height: 1.4 !important;
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        word-break: normal !important;
-        overflow-wrap: break-word !important;
-    }
-
-    .hero-lead {
-        font-size: 0.95rem !important;
-        line-height: 1.6 !important;
-        margin-bottom: 30px !important;
-        padding: 0 10px !important;
-        white-space: normal !important;
-        display: block !important;
-        width: 100% !important;
-    }
-
     .section-title {
         font-size: 1.7rem;
         /* 見出しも少し小さくして余白を稼ぐ */
@@ -1901,23 +1877,30 @@ ul {
     }
 
     .hero-title {
-        font-size: 1.5rem;
-        /* 1.6remから微縮小 */
-        line-height: 1.3;
-        word-break: normal;
-        overflow-wrap: break-word;
-        /* 適切な場所での折り返しを許可 */
-        margin-bottom: 15px;
-        padding: 0 10px;
+        font-size: 1.5rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 25px !important;
         white-space: normal !important;
-        max-width: 100vw;
+        /* これが決定打 */
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
+        padding: 0 10px !important;
     }
 
     .hero-lead {
-        font-size: 0.95rem;
-        /* 1.0remから微縮小 */
-        line-height: 1.5;
-        padding: 0 10px;
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+        margin-bottom: 30px !important;
+        padding: 0 15px !important;
+        white-space: normal !important;
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: normal !important;
+        overflow-wrap: break-word !important;
     }
 
     .btn {
