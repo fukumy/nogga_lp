@@ -1236,15 +1236,15 @@ ul {
         bottom: 0 !important;
         transform: none !important;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+        /* 幅を広げる */
         display: flex;
-        flex-direction: column;
-        /* 縦並びにして幅を確保 */
-        align-items: center;
-        text-align: center;
-        /* 中央寄せ */
+        flex-direction: row;
+        /* 横並びに戻してテキスト領域を確保 */
+        align-items: flex-start;
+        text-align: left;
         gap: 15px;
-        padding: 24px 20px;
+        padding: 20px 15px;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -1252,25 +1252,28 @@ ul {
     }
 
     .winwin-icon {
-        width: 50px;
-        /* アイコンを小さく */
-        height: 50px;
-        font-size: 1.3rem;
+        width: 40px;
+        /* さらにアイコンを小さく */
+        height: 40px;
+        font-size: 1.1rem;
         margin: 0;
         flex-shrink: 0;
+        background: var(--pale-mint);
+        /* 背景を少し明るく */
+        color: var(--primary-color);
     }
 
     .winwin-label {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         font-weight: bold;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
         white-space: normal;
-        /* 折り返しを許可 */
     }
 
     .winwin-desc {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         line-height: 1.5;
+        color: #555;
     }
 
     .winwin-arrow {
@@ -1759,6 +1762,30 @@ ul {
     line-height: 1.5;
 }
 
+@media (max-width: 768px) {
+    .closing {
+        padding: 60px 0;
+    }
+
+    .closing-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .closing-highlight {
+        font-size: 1.5rem;
+        /* スマホ用に縮小 */
+    }
+
+    .closing-image {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+}
+
 .closing-text {
     font-size: 1.1rem;
     line-height: 2;
@@ -1939,13 +1966,19 @@ ul {
         margin-bottom: 25px;
         width: 100%;
         max-width: 280px;
-        /* PC同様に適切に表示 */
         margin: 0 auto 20px;
+        flex: none;
+        /* flex-basisを無効化 */
     }
 
     .profile-img img {
         width: 100%;
         height: auto;
+    }
+
+    .profile-info {
+        width: 100%;
+        /* 全幅表示にしてテキスト領域を確保 */
     }
 
     /* Plans */
@@ -2451,34 +2484,36 @@ ul {
 
     .roadmap-item {
         display: flex;
-        flex-direction: column;
-        /* 縦並びにして幅を確保 */
-        align-items: center;
-        text-align: center;
+        flex-direction: row;
+        /* 横並び（アイコン左・内容右）に再考 */
+        align-items: flex-start;
+        text-align: left;
         width: 100%;
         gap: 15px;
     }
 
     .roadmap-icon {
-        width: 60px;
+        width: 45px;
         /* アイコンを小さく */
-        height: 60px;
-        margin: 0 auto;
-        font-size: 1.8rem;
+        height: 45px;
+        margin: 0;
+        font-size: 1.4rem;
         flex-shrink: 0;
+        background: var(--white);
+        border: 2px solid var(--primary-color);
     }
 
     .roadmap-period {
-        margin-top: 5px;
-        margin-bottom: 10px;
-        white-space: normal;
-        font-size: 1.1rem;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        font-size: 1.05rem;
     }
 
     .roadmap-phase {
-        width: 100%;
+        flex: 1;
+        /* 残りの幅をすべて使用 */
         margin-top: 0;
-        padding: 20px;
+        padding: 15px;
     }
 
     .roadmap-step::after {
